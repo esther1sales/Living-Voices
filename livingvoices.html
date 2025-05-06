@@ -6,6 +6,7 @@
     <title>Living Voices</title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Kodchasan&display=swap" rel="stylesheet">
 <style>
+<style>
 @font-face {
   font-family: 'ABCDiatype';
   src: url('ABCDiatypeSemi-Mono-Light.woff') format('woff');
@@ -134,6 +135,7 @@ body {
     background-color: inherit;
     transition: width 0.3s ease-in-out;
     position: relative;
+    overflow: hidden; /* keeps contents inside */
 }
 
 .card:hover {
@@ -157,6 +159,9 @@ body {
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
     box-sizing: border-box;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .card:hover h4 {
@@ -166,16 +171,23 @@ body {
 
 .card .expanded-text {
     position: absolute;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
     font-weight: 900;
     color: white;
     text-align: center;
     padding: 15px;
     width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     opacity: 0;
     visibility: hidden;
     font-family: 'Kodchasan', sans-serif;
     white-space: normal;
+    word-break: break-word;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: opacity 0.3s ease-in-out;
     transition-delay: 0.2s;
 }
@@ -367,7 +379,6 @@ body {
     color: #C71585;
 }
 
-/* Large screen tweaks */
 @media (min-width: 1440px) {
     .button-style {
         font-size: 1.1rem;
@@ -379,6 +390,7 @@ body {
     }
 }
 </style>
+
 
 </head>
 <body>
