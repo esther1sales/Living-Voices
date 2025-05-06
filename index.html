@@ -6,98 +6,107 @@
   <title>Cultural Fingerprints</title>
 
   <style>
-@font-face {
-  font-family: 'ABCDiatype';
-  src: url('ABCDiatypeSemi-Mono-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'ABCDiatype';
-  src: url('ABCDiatypeSemi-Mono-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'ABCDiatype';
-  src: url('ABCDiatypeSemi-Mono-Bold.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: rgb(255, 191, 0);
-  overflow: hidden;
-  font-family: 'ABCDiatype', sans-serif;
-  font-weight: 400;
-}
-
-.title {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(0, 0, 0);
-  font-size: 4rem;
-  z-index: 2;
-  text-align: center;
-  pointer-events: none;
-  font-family: 'ABCDiatype', sans-serif;
-  font-weight: 800;
-}
-
-.subtitle {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(0, 0, 0);
-  font-size: 1.5rem;
-  z-index: 2;
-  text-align: center;
-  pointer-events: none;
-}
-
-.tag-box {
-  display: inline-block;
-  background-color: black;
-  color: rgb(255, 191, 0);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-}
-
-.top-right-link {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: rgb(0, 0, 0);
-  text-decoration: underline;
-  font-size: 1rem;
-  z-index: 3;
-  transition: color 0.3s ease;
-}
-
-.top-right-link:hover {
-  color: rgb(255, 0, 102);
-}
-
-#dvd-square {
-  position: absolute;
-  width: 300px;
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 4;
-  border: 2px solid rgb(255, 191, 0);
-  border-radius: 8px;
-}
-  </style>
+    @font-face {
+      font-family: 'ABCDiatype';
+      src: url('ABCDiatypeSemi-Mono-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'ABCDiatype';
+      src: url('ABCDiatypeSemi-Mono-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'ABCDiatype';
+      src: url('ABCDiatypeSemi-Mono-Bold.woff') format('woff');
+      font-weight: 800;
+      font-style: normal;
+    }
+    
+    html {
+      font-size: calc(100vw / 1920 * 16); /* 16px on 1920px screen, scales proportionally */
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: rgb(255, 191, 0);
+      overflow: hidden;
+      font-family: 'ABCDiatype', sans-serif;
+      font-weight: 400;
+      position: relative;
+    }
+    
+    /* Proportional title and subtitle */
+    .title {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: black;
+      font-size: 4rem; /* base on html font-size */
+      z-index: 2;
+      text-align: center;
+      pointer-events: none;
+      font-family: 'ABCDiatype', sans-serif;
+      font-weight: 800;
+    }
+    
+    .subtitle {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: black;
+      font-size: 1.5rem;
+      z-index: 2;
+      text-align: center;
+      pointer-events: none;
+    }
+    
+    /* Tag box remains proportionate */
+    .tag-box {
+      display: inline-block;
+      background-color: black;
+      color: rgb(255, 191, 0);
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    /* Top link proportional */
+    .top-right-link {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      color: black;
+      text-decoration: underline;
+      font-size: 1rem;
+      z-index: 3;
+      transition: color 0.3s ease;
+    }
+    .top-right-link:hover {
+      color: rgb(255, 0, 102);
+    }
+    
+    /* Square image scales proportionally */
+    #dvd-square {
+      position: absolute;
+      width: 18.75rem;  /* 300px at base scale */
+      height: 11.25rem; /* 180px at base scale */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 4;
+      border: 2px solid rgb(255, 191, 0);
+      border-radius: 0.5rem;
+    }
+    </style>
+    
+    
 </head>
 <body>
   <a class="top-right-link" href="livingvoices.html">Living Voices</a>
